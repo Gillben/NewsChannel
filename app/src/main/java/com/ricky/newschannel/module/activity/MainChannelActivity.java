@@ -7,6 +7,7 @@ import android.support.annotation.NonNull;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
+import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.WindowManager;
@@ -101,7 +102,7 @@ public class MainChannelActivity extends BaseActivity
             mDrawerLayout.setFitsSystemWindows(true);
             //同时把侧边栏延伸至顶部状态栏
             mDrawerLayout.setClipToPadding(false);
-
+            Log.e("123", "initDrawerLayout: 初始化");
             mDrawerLayout.addDrawerListener(new DrawerLayout.SimpleDrawerListener() {
                 @Override
                 public void onDrawerClosed(View drawerView) {
