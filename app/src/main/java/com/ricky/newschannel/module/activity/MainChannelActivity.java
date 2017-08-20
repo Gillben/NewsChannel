@@ -102,7 +102,6 @@ public class MainChannelActivity extends BaseActivity
             mDrawerLayout.setFitsSystemWindows(true);
             //同时把侧边栏延伸至顶部状态栏
             mDrawerLayout.setClipToPadding(false);
-            Log.e("123", "initDrawerLayout: 初始化");
             mDrawerLayout.addDrawerListener(new DrawerLayout.SimpleDrawerListener() {
                 @Override
                 public void onDrawerClosed(View drawerView) {
