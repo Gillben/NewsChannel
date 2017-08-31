@@ -24,7 +24,7 @@ public class RecycleViewAdapter extends RecyclerView.Adapter<RecyclerView.ViewHo
         implements View.OnClickListener {
 
     public OnRecycleViewItemClickListener itemListener;
-    private List<NewsInfo.NewsResult.NewsData> mlist;
+    private List<NewsInfo.NewsResult.NewsData> mList;
     private List<String> urlList = new ArrayList<>();
     private Context mContext;
 
@@ -40,7 +40,7 @@ public class RecycleViewAdapter extends RecyclerView.Adapter<RecyclerView.ViewHo
         if (urlList.size() > 0){
             urlList.clear();
         }
-        mlist = list;
+        mList = list;
         notifyDataSetChanged();
     }
 
@@ -49,10 +49,16 @@ public class RecycleViewAdapter extends RecyclerView.Adapter<RecyclerView.ViewHo
      * @param list
      */
     public void loadMoreRecycleItem(List<NewsInfo.NewsResult.NewsData> list) {
-        for (int i = 0; i < list.size(); i++) {
-            mlist.add(list.get(i));
+        addMoreData(mList.size(),list);
+        int pos = mList.size();
+        for (NewsInfo.NewsResult.NewsData newsData: list){
+            notifyItemInserted(pos++);
         }
-        notifyDataSetChanged();
+    }
+
+    private void addMoreData(int position,List<NewsInfo.NewsResult.NewsData> list){
+        mList.addAll(position,list);
+
     }
 
     public void launchNewsDetail(int position){
@@ -69,23 +75,23 @@ public class RecycleViewAdapter extends RecyclerView.Adapter<RecyclerView.ViewHo
         return new MyViewHolder(layout);
     }
 
-    //将数据绑定到每一个chidview中
+    //将数据绑定到每一个childView中
     @Override
     public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
         if (holder instanceof MyViewHolder) {
-            setOnlyOneImage(mlist.get(position).getThumbnail_pic_s(), ((MyViewHolder) holder).itemImageView);
-            ((MyViewHolder) holder).title_text.setText(mlist.get(position).getTitle());
-            ((MyViewHolder) holder).author_text.setText(mlist.get(position).getAuthor_name());
-            ((MyViewHolder) holder).data_text.setText(mlist.get(position).getDate());
-            urlList.add(mlist.get(position).getUrl());
+            setOnlyOneImage(mList.get(position).getThumbnail_pic_s(), ((MyViewHolder) holder).itemImageView);
+            ((MyViewHolder) holder).title_text.setText(mList.get(position).getTitle());
+            ((MyViewHolder) holder).author_text.setText(mList.get(position).getAuthor_name());
+            ((MyViewHolder) holder).data_text.setText(mList.get(position).getDate());
+            urlList.add(mList.get(position).getUrl());
             holder.itemView.setTag(position);
         }
     }
 
     @Override
     public int getItemCount() {
-        if (mlist != null) {
-            return mlist.size();
+        if (mList != null) {
+            return mList.size();
         } else {
             return 0;
         }
