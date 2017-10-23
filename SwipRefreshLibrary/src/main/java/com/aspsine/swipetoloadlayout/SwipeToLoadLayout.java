@@ -247,6 +247,7 @@ public class SwipeToLoadLayout extends ViewGroup {
         public static final int SCALE = 3;
     }
 
+
     public SwipeToLoadLayout(Context context) {
         this(context, null);
     }
@@ -387,6 +388,7 @@ public class SwipeToLoadLayout extends ViewGroup {
         }
     }
 
+
     @Override
     protected void onLayout(boolean changed, int l, int t, int r, int b) {
         layoutChildren();
@@ -459,6 +461,7 @@ public class SwipeToLoadLayout extends ViewGroup {
         }
         return super.dispatchTouchEvent(ev);
     }
+
 
     @Override
     public boolean onInterceptTouchEvent(MotionEvent event) {

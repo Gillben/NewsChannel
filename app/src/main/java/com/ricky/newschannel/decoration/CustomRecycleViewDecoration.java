@@ -1,4 +1,4 @@
-package com.ricky.newschannel.recycleview;
+package com.ricky.newschannel.decoration;
 
 import android.content.Context;
 import android.content.res.TypedArray;

@@ -18,7 +18,7 @@ import javax.inject.Inject;
 import butterknife.BindView;
 
 /**
- * Created by Administrator on 2017/4/11.
+ * 新闻Fragment
  */
 
 public class NewsMainFragment extends BaseFragment {
@@ -36,6 +36,7 @@ public class NewsMainFragment extends BaseFragment {
     @Override
     protected int attachLayoutRes() {
         return R.layout.fragment_news_main;
+
     }
 
 

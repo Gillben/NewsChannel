@@ -14,7 +14,7 @@ import com.ricky.newschannel.adapter.RecycleViewAdapter;
 import com.ricky.newschannel.api.bean.NewsInfo;
 import com.ricky.newschannel.module.fragment.BaseFragment;
 import com.ricky.newschannel.presenter.NewsListPresenter;
-import com.ricky.newschannel.recycleview.CustomRecycleViewDecoration;
+import com.ricky.newschannel.decoration.CustomRecycleViewDecoration;
 import com.ricky.newschannel.view.INewsListView;
 
 import java.util.List;
@@ -23,7 +23,7 @@ import javax.inject.Inject;
 
 import butterknife.BindView;
 
-import static com.ricky.newschannel.recycleview.CustomRecycleViewDecoration.VERTICAL_LIST;
+import static com.ricky.newschannel.decoration.CustomRecycleViewDecoration.VERTICAL_LIST;
 
 /**
  * 新闻类型详情
