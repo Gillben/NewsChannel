@@ -36,7 +36,6 @@ public class NewsMainFragment extends BaseFragment {
     @Override
     protected int attachLayoutRes() {
         return R.layout.fragment_news_main;
-
     }
 
 

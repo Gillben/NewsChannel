@@ -1,9 +1,8 @@
 apply plugin: 'com.android.application'
-apply plugin: 'android-apt'
 
 android {
     compileSdkVersion 25
-    buildToolsVersion "25.0.2"
+    buildToolsVersion '26.0.2'
     defaultConfig {
         applicationId "com.ricky.newschannel"
         minSdkVersion 19
@@ -25,13 +24,13 @@ dependencies {
     androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
-    compile 'com.android.support:appcompat-v7:25.2.0'
+    compile 'com.android.support:appcompat-v7:25.4.0'
     testCompile 'junit:junit:4.12'
     //dagger2
-    apt 'com.google.dagger:dagger-compiler:2.6'
+    annotationProcessor 'com.google.dagger:dagger-compiler:2.6'
     compile 'com.google.dagger:dagger:2.6'
     //ButterKnife
-    apt 'com.jakewharton:butterknife-compiler:8.2.1'
+    annotationProcessor 'com.jakewharton:butterknife-compiler:8.2.1'
     compile 'com.jakewharton:butterknife:8.2.1'
     // rxjava
     compile 'io.reactivex:rxjava:1.1.9'
@@ -44,7 +43,7 @@ dependencies {
     compile 'com.squareup.retrofit2:retrofit:2.1.0'
     compile 'com.squareup.retrofit2:converter-gson:2.1.0'
     compile 'com.squareup.retrofit2:adapter-rxjava:2.1.0'
-    compile 'com.android.support:design:25.2.0'
+    compile 'com.android.support:design:25.4.0'
     //OkHttp3
     compile 'com.squareup.okhttp3:okhttp:3.8.0'
     // picasso, slider 库需要用到下面两个库,这样有点多余，可以选择别的库
